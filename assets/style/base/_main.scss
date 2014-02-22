@@ -1,4 +1,66 @@
 html{
-  font: 16px/1.5 $base-font-family;
+  font: normal $base-font-size $base-font-family;
+  line-height: 1.5;
   color: $brand-color;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.header{
+  background: $brand-color url('assets/images/bg.jpg') center center no-repeat;
+  @include vendor(background-size, cover);
+}
+
+.logo{
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include vendor(transform, translate(-50%, -50%));
+  color: #fff;
+  width: 500px;
+  height: 320px;
+  background: transparent url('assets/images/logo.png') top left no-repeat;
+  text-indent: -9999px;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
+
+/** 
+ * Section 
+ */
+
+.section{
+  position: relative;
+
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.section--white{
+  background-color: #FAFAFA;
+  color: $base-color;
+}
+
+.section--red{
+  background-color: $brand-color;
+  color: #fff;
+}
+
+.inner{
+  padding: 2em;
+
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
 }

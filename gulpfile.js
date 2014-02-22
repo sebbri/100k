@@ -15,13 +15,10 @@ var paths = {
 };
 
 gulp.task('default', function() {
-  gulp.src(paths.style)
-    .pipe(watch(function(files) {
-      return files.pipe(sass())
-        .pipe(minifyCSS(opts))
-        .pipe(gulp.dest('./'))
-        .pipe(lReload());
-    }));
+  watch({glob: 'assets/style/**/*.scss'}, function(files) {
+    return files.pipe(sass())
+      .pipe(gulp.dest('./'));
+  });
 });
 
 gulp.task('scripts', function() {
@@ -33,6 +30,6 @@ gulp.task('scripts', function() {
 
 gulp.task('images', function() {
   return gulp.src(paths.images)
-    .pipe(imagemin({optimizationLevel: 5}))
+    .pipe(imagemin({optimizationLevel: 9}))
     .pipe(gulp.dest('assets/images/build'));
 });
