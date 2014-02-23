@@ -16,24 +16,12 @@
 /*------------------------------------* 
    $IMPORTS 
 *------------------------------------*/
-/** 
- * Defaults 
- */
 @import "defaults";
-
-/** 
- * Base 
- */
 @import "generic/mixins";
+@import "generic/reset";
 @import "base/normalize";
 @import "base/main";
 @import "base/headings";
 @import "base/paragraphs";
-
-/** 
- * Generic 
- */
-
-/** 
- * Objects 
- */
+@import "objects/grids";
+@import "base/widths";

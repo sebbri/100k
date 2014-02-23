@@ -11,9 +11,6 @@
 /*------------------------------------* 
    $IMPORTS 
 *------------------------------------*/
-/** 
- * Defaults 
- */
 /*------------------------------------* 
    $DEFAULTS 
 *------------------------------------*/
@@ -25,9 +22,6 @@
  */
 /** 
  * Global border-box 
- */
-/** 
- * Base 
  */
 /*------------------------------------* 
    $MIXINS 
@@ -53,6 +47,10 @@
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 article,
 aside,
@@ -259,6 +257,18 @@ body {
   margin: 0;
   padding: 0; }
 
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  color: #fff;
+  width: 500px;
+  height: 320px;
+  background: transparent url("assets/images/logo.png") top left no-repeat;
+  text-indent: -9999px;
+  -webkit-background-size: 100%;
+  background-size: 100%; }
+
 .header {
   background: #67172b url("assets/images/bg.jpg") center center no-repeat;
   -webkit-background-size: cover;
@@ -267,10 +277,7 @@ body {
   -o-background-size: cover;
   background-size: cover; }
 
-.logo {
-  display: block;
-  margin: 0;
-  padding: 0;
+.teaser {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -279,13 +286,30 @@ body {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  text-align: center; }
+
+.teaser-text {
   color: #fff;
-  width: 500px;
-  height: 320px;
-  background: transparent url("assets/images/logo.png") top left no-repeat;
-  text-indent: -9999px;
-  -webkit-background-size: 100%;
-  background-size: 100%; }
+  font-weight: 300; }
+
+.teaser-btn {
+  display: inline-block;
+  line-height: 2.2;
+  padding: 0 1.5em;
+  background-color: #fff;
+  text-decoration: none;
+  color: #21262c;
+  border-radius: 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .teaser-btn:hover {
+    padding: 0 1.8em; }
 
 /** 
  * Section 
@@ -312,14 +336,142 @@ body {
     display: table;
     clear: both; }
 
+.push-middle {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 p {
   font-weight: 300;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.68; }
 
-/** 
- * Generic 
+/**
+ * Grid wrapper
  */
-/** 
- * Objects 
+.grid {
+  margin-left: -20px;
+  list-style: none;
+  margin-bottom: 0; }
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
  */
+.grid > .grid {
+  margin-left: 0; }
+
+/**
+ * Grid
+ */
+.grid__item {
+  display: inline-block;
+  width: 100%;
+  padding-left: 20px;
+  vertical-align: top;
+  float: left; }
+
+/*------------------------------------* 
+     $WIDTHS 
+*------------------------------------*/
+/**
+* Whole
+*/
+.one-whole {
+  width: 100%; }
+
+/**
+* Halves
+*/
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%; }
+
+/**
+* Thirds
+*/
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%; }
+
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%; }
+
+/**
+* Quarters
+*/
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%; }
+
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%; }
+
+/**
+* Fifths
+*/
+.one-fifth, .two-tenths {
+  width: 20%; }
+
+.two-fifths, .four-tenths {
+  width: 40%; }
+
+.three-fifths, .six-tenths {
+  width: 60%; }
+
+.four-fifths, .eight-tenths {
+  width: 80%; }
+
+/**
+* Sixths
+*/
+.one-sixth, .two-twelfths {
+  width: 16.666%; }
+
+.five-sixths, .ten-twelfths {
+  width: 83.333%; }
+
+/**
+* Eighths
+*/
+.one-eighth {
+  width: 12.5%; }
+
+.three-eighths {
+  width: 37.5%; }
+
+.five-eighths {
+  width: 62.5%; }
+
+.seven-eighths {
+  width: 87.5%; }
+
+/**
+* Tenths
+*/
+.one-tenth {
+  width: 10%; }
+
+.three-tenths {
+  width: 30%; }
+
+.seven-tenths {
+  width: 70%; }
+
+.nine-tenths {
+  width: 90%; }
+
+/**
+* Twelfths
+*/
+.one-twelfth {
+  width: 8.333%; }
+
+.five-twelfths {
+  width: 41.666%; }
+
+.seven-twelfths {
+  width: 58.333%; }
+
+.eleven-twelfths {
+  width: 91.666%; }

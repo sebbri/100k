@@ -9,19 +9,10 @@ body{
   padding: 0;
 }
 
-.header{
-  background: $brand-color url('assets/images/bg.jpg') center center no-repeat;
-  @include vendor(background-size, cover);
-}
-
 .logo{
   display: block;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  @include vendor(transform, translate(-50%, -50%));
   color: #fff;
   width: 500px;
   height: 320px;
@@ -29,6 +20,42 @@ body{
   text-indent: -9999px;
   -webkit-background-size: 100%;
   background-size: 100%;
+}
+
+.header{
+  background: $brand-color url('assets/images/bg.jpg') center center no-repeat;
+  @include vendor(background-size, cover);
+}
+
+.teaser{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include vendor(transform, translate(-50%, -50%));
+  text-align: center;
+}
+
+.teaser-text{
+  color: #fff;
+  font-weight: 300;
+}
+
+.teaser-btn{
+  display: inline-block;
+  line-height: 2.2;
+  padding: 0 1.5em;
+  background-color: #fff;
+  text-decoration: none;
+  color: $base-color;
+  border-radius: 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  @include vendor(transition, all .2s ease);
+
+  &:hover{
+    padding: 0 1.8em;
+  }
 }
 
 /** 
@@ -63,4 +90,10 @@ body{
     display: table;
     clear: both;
   }
+}
+
+.push-middle{
+  position: absolute;
+  top: 50%;
+  @include vendor(transform, translateY(-50%));
 }
