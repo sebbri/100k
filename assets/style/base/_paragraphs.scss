@@ -1,3 +1,21 @@
+a{
+  color: $brand-color;
+  text-decoration: none;
+  border-bottom: 1px solid $brand-color;
+  @include vendor(transition, all .2s ease);
+  font-weight: 400;
+
+  &:hover{
+    border-bottom: 1px solid transparent;
+    color: $base-color;
+  }
+
+  .section--red & {
+    color: #fff;
+    border-bottom-color: #fff;
+  }
+}
+
 p{
   font-weight: 300;
   font-size: 20px;

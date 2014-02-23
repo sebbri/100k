@@ -6,8 +6,18 @@ function fullHeight(elClass) {
   });
 }
 
+function jumpNext() {
+    $("a[href*=#]").click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $($(this).attr("href")).offset().top
+        }, 250);
+    });
+}
+
 $(function(){
   fullHeight(".full-section");
+  jumpNext();
 });
 
 $(window).resize(function(){
